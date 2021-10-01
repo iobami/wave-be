@@ -41,8 +41,8 @@ contract WavePortal {
          * We need to make sure the current timestamp is at least 15-minutes bigger than the last timestamp we stored
          */
         require(
-            lastWavedAt[msg.sender] + 15 minutes < block.timestamp,
-            "Wait 15m"
+            lastWavedAt[msg.sender] + 30 minutes < block.timestamp,
+            "Wait 30 minutes"
         );
 
         /*
@@ -61,7 +61,7 @@ contract WavePortal {
 
         seed = randomNumber;
 
-        if (randomNumber < 50) {
+        if (randomNumber < 10) {
             console.log("%s won!", msg.sender);
 
             uint256 prizeAmount = 0.0001 ether;
